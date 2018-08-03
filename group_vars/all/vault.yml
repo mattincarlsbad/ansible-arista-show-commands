@@ -1,4 +1,4 @@
 #unencrypted vault file
 #https://docs.ansible.com/ansible/latest/user_guide/playbooks_vault.html
 #https://gist.github.com/tristanfisher/e5a306144a637dc739e7
-vault_eapi_password: vagrant
+vault_eapi_password: admin
