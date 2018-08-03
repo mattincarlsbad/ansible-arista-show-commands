@@ -5,7 +5,7 @@ eos_connection:
   validate_certs: No
   authorize: yes
   timeout: 300
-  username: vagrant
+  username: admin
   password: "{{ eapi_password }}"
   auth_pass: "{{ eapi_password }}"
   
