@@ -1,0 +1,6 @@
+hostname,extension,status
+{% for n in groups['arista'] %}
+{% for o in hostvars[n]['result']['stdout'][0]['extensions'] %}
+{{ n }},{{ o }},{{ hostvars[n]['result']['stdout'][0]['extensions'][o]['status'] }}
+{% endfor %}
+{% endfor %}
