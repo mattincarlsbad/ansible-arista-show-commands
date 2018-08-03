@@ -1,0 +1,14 @@
+---
+- hosts: arista 
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: Gather info from Show Version
+    eos_command:
+      commands: show version
+      provider: "{{ eos_connection }}"
+    register: result
+
+  - debug: 
+msg: "{{ result.stdout_lines[0].version }}"
