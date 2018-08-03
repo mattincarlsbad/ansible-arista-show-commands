@@ -1,0 +1,12 @@
+#variables
+eos_connection:
+  host: "{{ ansible_host }}"
+  transport: eapi
+  validate_certs: No
+  authorize: yes
+  timeout: 300
+  username: vagrant
+  password: "{{ eapi_password }}"
+  auth_pass: "{{ eapi_password }}"
+  
+eapi_password: "{{ vault_eapi_password }}"
