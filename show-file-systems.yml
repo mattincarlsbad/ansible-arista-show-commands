@@ -1,0 +1,16 @@
+---
+- hosts: arista 
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: Gather Space info from Show File Systems
+    eos_command:
+      commands: show file systems
+      provider: "{{ eos_connection }}"
+    register: result
+
+  - debug: 
+      msg: "{{ item.prefix }}-{{ item.size }}"
+    with_items: "{{ result.stdout[0].fileSystems }}"
+    when: "'flash' in item.prefix"
