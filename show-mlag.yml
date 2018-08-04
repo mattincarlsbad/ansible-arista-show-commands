@@ -11,4 +11,4 @@
     register: result
 
   - debug: 
-msg: "{{ result.stdout[0].peerLinkStatus }}"
+      msg: "{{ result.stdout[0].peerLinkStatus }}"
